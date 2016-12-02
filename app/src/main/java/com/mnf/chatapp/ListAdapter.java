@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 /**
@@ -32,12 +34,14 @@ public class ListAdapter extends ArrayAdapter<Model> {
         Model model = getItem(position);
 
         boolean isPhoto = model.getPhotoUrl() != null;
+
+
+
         if (isPhoto) {
             messageTextView.setVisibility(View.GONE);
             photoImageView.setVisibility(View.VISIBLE);
-            /*Glide.with(photoImageView.getContext())
-                    .load(model.getPhotoUrl())
-                    .into(photoImageView);*/
+
+            Picasso.with(photoImageView.getContext()).load(model.getPhotoUrl()).into(photoImageView);
         } else {
             messageTextView.setVisibility(View.VISIBLE);
             photoImageView.setVisibility(View.GONE);

@@ -9,7 +9,9 @@ public class Model {
     private String text;
     private String photoUrl;
 
+  public Model(){
 
+  }
     public Model(String name,String text,String photoUrl){
         this.name = name;
         this.text = text;
